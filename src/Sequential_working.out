@@ -1,0 +1,181 @@
+Using device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/utils/data/dataloader.py:478: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Traceback (most recent call last):
+  File "/home/rxk654/Documents/InceptionV4_parallelization/sequential.py", line 30, in <module>
+    model.to(device)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 899, in to
+    return self._apply(convert)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 593, in _apply
+    param_applied = fn(param)
+  File "/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 897, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: all CUDA-capable devices are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+srun: error: classt13: task 0: Exited with exit code 1
+Using device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+/home/rxk654/Documents/InceptionV4_parallelization/venv/lib/python3.8/site-packages/torch/utils/data/dataloader.py:478: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+[1, 100] loss: 2.359
+[1, 200] loss: 2.218
+[1, 300] loss: 2.067
+[1, 400] loss: 2.009
+[1, 500] loss: 1.964
+[1, 600] loss: 1.958
+[1, 700] loss: 1.916
+[1, 800] loss: 1.871
+[1, 900] loss: 1.817
+[1, 1000] loss: 1.763
+[1, 1100] loss: 1.715
+[1, 1200] loss: 1.703
+[1, 1300] loss: 1.656
+[1, 1400] loss: 1.647
+[1, 1500] loss: 1.636
+[2, 100] loss: 1.602
+[2, 200] loss: 1.525
+[2, 300] loss: 1.529
+[2, 400] loss: 1.495
+[2, 500] loss: 1.460
+[2, 600] loss: 1.437
+[2, 700] loss: 1.426
+[2, 800] loss: 1.422
+[2, 900] loss: 1.359
+[2, 1000] loss: 1.351
+[2, 1100] loss: 1.309
+[2, 1200] loss: 1.275
+[2, 1300] loss: 1.234
+[2, 1400] loss: 1.277
+[2, 1500] loss: 1.221
+[3, 100] loss: 1.197
+[3, 200] loss: 1.217
+[3, 300] loss: 1.165
+[3, 400] loss: 1.136
+[3, 500] loss: 1.148
+[3, 600] loss: 1.135
+[3, 700] loss: 1.115
+[3, 800] loss: 1.100
+[3, 900] loss: 1.134
+[3, 1000] loss: 1.116
+[3, 1100] loss: 1.111
+[3, 1200] loss: 1.075
+[3, 1300] loss: 1.090
+[3, 1400] loss: 1.069
+[3, 1500] loss: 1.042
+[4, 100] loss: 0.985
+[4, 200] loss: 1.025
+[4, 300] loss: 0.991
+[4, 400] loss: 0.941
+[4, 500] loss: 0.990
+[4, 600] loss: 0.925
+[4, 700] loss: 0.925
+[4, 800] loss: 0.935
+[4, 900] loss: 0.919
+[4, 1000] loss: 0.879
+[4, 1100] loss: 0.915
+[4, 1200] loss: 0.890
+[4, 1300] loss: 0.899
+[4, 1400] loss: 0.890
+[4, 1500] loss: 0.846
+[5, 100] loss: 0.850
+[5, 200] loss: 0.852
+[5, 300] loss: 0.814
+[5, 400] loss: 0.789
+[5, 500] loss: 0.825
+[5, 600] loss: 0.785
+[5, 700] loss: 0.811
+[5, 800] loss: 0.811
+[5, 900] loss: 0.810
+[5, 1000] loss: 0.785
+[5, 1100] loss: 0.765
+[5, 1200] loss: 0.814
+[5, 1300] loss: 0.768
+[5, 1400] loss: 0.729
+[5, 1500] loss: 0.748
+[6, 100] loss: 0.713
+[6, 200] loss: 0.728
+[6, 300] loss: 0.705
+[6, 400] loss: 0.722
+[6, 500] loss: 0.706
+[6, 600] loss: 0.696
+[6, 700] loss: 0.697
+[6, 800] loss: 0.717
+[6, 900] loss: 0.691
+[6, 1000] loss: 0.727
+[6, 1100] loss: 0.697
+[6, 1200] loss: 0.686
+[6, 1300] loss: 0.674
+[6, 1400] loss: 0.719
+[6, 1500] loss: 0.714
+[7, 100] loss: 0.653
+[7, 200] loss: 0.607
+[7, 300] loss: 0.606
+[7, 400] loss: 0.626
+[7, 500] loss: 0.626
+[7, 600] loss: 0.635
+[7, 700] loss: 0.627
+[7, 800] loss: 0.623
+[7, 900] loss: 0.621
+[7, 1000] loss: 0.654
+[7, 1100] loss: 0.612
+[7, 1200] loss: 0.586
+[7, 1300] loss: 0.624
+[7, 1400] loss: 0.610
+[7, 1500] loss: 0.633
+[8, 100] loss: 0.525
+[8, 200] loss: 0.546
+[8, 300] loss: 0.557
+[8, 400] loss: 0.545
+[8, 500] loss: 0.546
+[8, 600] loss: 0.540
+[8, 700] loss: 0.516
+[8, 800] loss: 0.567
+[8, 900] loss: 0.564
+[8, 1000] loss: 0.551
+[8, 1100] loss: 0.559
+[8, 1200] loss: 0.553
+[8, 1300] loss: 0.508
+[8, 1400] loss: 0.556
+[8, 1500] loss: 0.543
+[9, 100] loss: 0.467
+[9, 200] loss: 0.480
+[9, 300] loss: 0.483
+[9, 400] loss: 0.474
+[9, 500] loss: 0.454
+[9, 600] loss: 0.475
+[9, 700] loss: 0.495
+[9, 800] loss: 0.480
+[9, 900] loss: 0.504
+[9, 1000] loss: 0.492
+[9, 1100] loss: 0.500
+[9, 1200] loss: 0.521
+[9, 1300] loss: 0.470
+[9, 1400] loss: 0.493
+[9, 1500] loss: 0.477
+[10, 100] loss: 0.397
+[10, 200] loss: 0.404
+[10, 300] loss: 0.398
+[10, 400] loss: 0.385
+[10, 500] loss: 0.426
+[10, 600] loss: 0.430
+[10, 700] loss: 0.406
+[10, 800] loss: 0.443
+[10, 900] loss: 0.441
+[10, 1000] loss: 0.428
+[10, 1100] loss: 0.464
+[10, 1200] loss: 0.428
+[10, 1300] loss: 0.438
+[10, 1400] loss: 0.440
+[10, 1500] loss: 0.401
+Finished Training
+Total training time: 6696.662034988403 seconds
