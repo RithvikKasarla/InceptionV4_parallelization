@@ -6,6 +6,7 @@ import timm
 import torch.nn as nn
 import torch.optim as optim
 import time
+from codecarbon import EmissionsTracker
 
 # Checking for GPU availability
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -58,6 +59,12 @@ def train_model(model, trainloader, criterion, optimizer, num_epochs=10):
 
 # Train the model
 start = time.time()
-train_model(model, trainloader, criterion, optimizer, num_epochs=10)
+tracker = EmissionsTracker()
+tracker.start()
+train_model(model, trainloader, criterion, optimizer, num_epochs=1)
 end = time.time()
+emissions = tracker.stop()
 print("Total training time:", end - start,"seconds")
+print("Total emissions:", emissions,"kg")
+
+

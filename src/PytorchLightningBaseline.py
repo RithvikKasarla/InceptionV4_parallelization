@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import timm
 import torch.nn.functional as F
 from torch.utils.data.distributed import DistributedSampler
+from codecarbon import EmissionsTracker
 
 
 class InceptionNetV4Model(pl.LightningModule):
@@ -59,7 +60,7 @@ if __name__ == '__main__':
     model = InceptionNetV4Model()
 
     trainer = pl.Trainer(
-        max_epochs=10,
+        max_epochs=1,
         accelerator='gpu',
         devices=2,
         strategy='ddp'
@@ -67,10 +68,15 @@ if __name__ == '__main__':
     
     print("Training Started")
     start_time = time.time()
+    tracker = EmissionsTracker()
+    tracker.start()
 
     trainer.fit(model, trainloader, testloader)
     end_time = time.time()
+    emissions = tracker.stop()
 
     print("Total training time:", end_time - start_time,"seconds")
+    print("Estimated CO2 emissions for training: ", emissions,"kg")
+
 
     trainer.save_checkpoint("inception_v4_trained.ckpt")
